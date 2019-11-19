@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TVStore.Models.TV>
+@{
+    ViewData["Title"] = "Catalog TV";
+    //Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>TV Store</title>
+</head>
+<body>
+    <h3>TV</h3>
+    <table>
+        <tr>
+            <td>Model</td>
+            <td>Brand</td>
+            <td>Price</td>
+            <td></td>
+        </tr>
+        @foreach (var TV in Model)
+        {
+            <tr>
+                <td>@TV.Name</td>
+                <td>@TV.Company</td>
+                <td>@TV.Price</td>
+                <td><a href="~/Home/Buy/@TV.Id">Buy</a></td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
